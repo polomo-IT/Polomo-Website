@@ -6,7 +6,6 @@ interface BrutalistFooterProps {
   onOpenFaq: () => void;
   onOpenDiagnostic: () => void;
   onApply?: () => void;
-  onOpenAdmin?: () => void;
 }
 
 export const BrutalistFooter: React.FC<BrutalistFooterProps> = ({
@@ -14,7 +13,6 @@ export const BrutalistFooter: React.FC<BrutalistFooterProps> = ({
   onOpenFaq,
   onOpenDiagnostic,
   onApply,
-  onOpenAdmin,
 }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -89,20 +87,22 @@ export const BrutalistFooter: React.FC<BrutalistFooterProps> = ({
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#who-it-is-for"
+                  <button
+                    type="button"
+                    onClick={onOpenRoadmap}
                     className="text-zinc-300 hover:text-white hover:underline underline-offset-4 decoration-[#FF0000] decoration-2 transition-colors text-left bg-transparent border-none p-0 font-medium text-sm cursor-pointer block py-0.5"
                   >
-                    Who It's For
-                  </a>
+                    4-Stage Roadmap ↗
+                  </button>
                 </li>
                 <li>
-                  <a
-                    href="#faq"
+                  <button
+                    type="button"
+                    onClick={onOpenFaq}
                     className="text-zinc-300 hover:text-white hover:underline underline-offset-4 decoration-[#FFE500] decoration-2 transition-colors text-left bg-transparent border-none p-0 font-medium text-sm cursor-pointer block py-0.5"
                   >
-                    Frequently Answered Questions
-                  </a>
+                    Frequently Answered ↗
+                  </button>
                 </li>
                 <li>
                   <button
@@ -122,17 +122,6 @@ export const BrutalistFooter: React.FC<BrutalistFooterProps> = ({
                     Cohort Intake Terminal ↗
                   </button>
                 </li>
-                {onOpenAdmin && (
-                  <li>
-                    <button
-                      type="button"
-                      onClick={onOpenAdmin}
-                      className="text-zinc-400 hover:text-[#FFE500] hover:underline underline-offset-4 decoration-[#FFE500] decoration-2 transition-colors text-left bg-transparent border-none p-0 font-medium text-xs uppercase tracking-wider cursor-pointer block py-0.5"
-                    >
-                      ⚙ Mission Control Switchboard
-                    </button>
-                  </li>
-                )}
               </ul>
             </div>
 
